@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Omar and Kaylene//Wedding//EN
+BEGIN:VEVENT
+UID:omar-kaylene-wedding-20270515@oafernandes.github.io
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:Omar & Kaylene's Wedding
+LOCATION:Studebaker House\, 12716 Alan Seeger Road\, Petersburg\, PA 16669
+DESCRIPTION:A Studebaker Wedding. Details: https://oafernandes.github.io/studebaker-wedding/
+END:VEVENT
+END:VCALENDAR

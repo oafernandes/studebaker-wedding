@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Studebaker Wedding · Omar &amp; Kaylene</title>
+<meta name="description" content="Omar &amp; Kaylene are getting married on May 15, 2027 at Studebaker House, Petersburg, Pennsylvania.">
+<meta property="og:title" content="A Studebaker Wedding · Omar & Kaylene">
+<meta property="og:description" content="Saturday, May 15, 2027 · Studebaker House, Petersburg, PA">
+<meta property="og:image" content="images/hall.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burgundy: #6d1a2c;
+    --burgundy-deep: #4a0f1d;
+    --yellow: #ffcf33;
+    --yellow-soft: #fff1b8;
+    --blue: #a8d4f0;
+    --blue-soft: #e6f3fb;
+    --cream: #fffaf2;
+    --ink: #2b1a1e;
+    --muted: #6b5a5e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font: 400 17px/1.65 Inter, system-ui, sans-serif;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--burgundy); }
+  h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 700; line-height: 1.15; margin: 0; }
+  .script { font-family: "Great Vibes", cursive; font-weight: 400; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* Nav */
+  nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 10;
+    display: flex; justify-content: center; gap: 28px;
+    padding: 14px 16px;
+    font-size: 14px; letter-spacing: .12em; text-transform: uppercase;
+    transition: background .3s, box-shadow .3s;
+  }
+  nav a { color: #fff; text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--yellow); }
+  nav.solid { background: var(--burgundy); box-shadow: 0 2px 12px rgba(0,0,0,.2); }
+
+  /* Hero */
+  .hero {
+    position: relative; min-height: 100vh; min-height: 100svh;
+    display: grid; place-items: center; text-align: center; color: #fff;
+    background: url(images/hall.jpg) center / cover no-repeat;
+    padding: 90px 20px 70px;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(74,15,29,.55) 0%, rgba(109,26,44,.72) 60%, rgba(74,15,29,.9) 100%);
+  }
+  .hero > div { position: relative; }
+  .hero .eyebrow { letter-spacing: .3em; text-transform: uppercase; font-size: 14px; color: var(--yellow); font-weight: 600; }
+  .hero h1 { font-size: clamp(44px, 9vw, 104px); margin: 14px 0 4px; }
+  .hero .names { font-size: clamp(46px, 8vw, 84px); color: var(--yellow); line-height: 1.1; }
+  .hero .when { margin-top: 18px; font-size: clamp(17px, 2.4vw, 21px); letter-spacing: .06em; }
+  .hero .when span { color: var(--blue); }
+  .btns { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 999px;
+    font-weight: 600; text-decoration: none; letter-spacing: .04em;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+  .btn-yellow { background: var(--yellow); color: var(--burgundy-deep); }
+  .btn-ghost { border: 2px solid var(--blue); color: #fff; }
+
+  /* Stripe */
+  .stripe { height: 14px; background: linear-gradient(90deg, var(--burgundy) 0 33.3%, var(--yellow) 33.3% 66.6%, var(--blue) 66.6%); }
+
+  section { padding: 84px 0; }
+  .center { text-align: center; }
+  .kicker { letter-spacing: .25em; text-transform: uppercase; font-size: 13px; font-weight: 600; color: var(--burgundy); }
+  h2 { font-size: clamp(32px, 5vw, 48px); color: var(--burgundy); margin: 10px 0 18px; }
+  .lead { max-width: 640px; margin: 0 auto; color: var(--muted); }
+
+  /* Countdown */
+  .countdown { background: var(--blue-soft); }
+  .clock { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 30px; }
+  .clock div {
+    background: #fff; border-top: 5px solid var(--yellow); border-radius: 14px;
+    min-width: 120px; padding: 18px 14px; box-shadow: 0 4px 18px rgba(109,26,44,.08);
+  }
+  .clock b { display: block; font: 700 46px/1 "Playfair Display", serif; color: var(--burgundy); }
+  .clock small { text-transform: uppercase; letter-spacing: .18em; font-size: 12px; color: var(--muted); }
+
+  /* Venue */
+  .venue-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+  .venue-photo { position: relative; }
+  .venue-photo img { border-radius: 18px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+  .venue-photo::after {
+    content: ""; position: absolute; inset: 18px -18px -18px 18px; z-index: -1;
+    border-radius: 18px; background: var(--yellow);
+  }
+  .venue-photo { z-index: 0; }
+  .facts { list-style: none; padding: 0; margin: 24px 0 0; }
+  .facts li { padding: 12px 0; border-bottom: 1px solid #ecdcd5; display: flex; gap: 14px; }
+  .facts li:last-child { border-bottom: 0; }
+  .facts .dot { flex: none; width: 12px; height: 12px; border-radius: 50%; margin-top: 8px; }
+
+  /* Gallery */
+  .gallery-sec { background: var(--burgundy); color: #fff; }
+  .gallery-sec h2 { color: var(--yellow); }
+  .gallery-sec .kicker { color: var(--blue); }
+  .gallery {
+    display: grid; gap: 14px; margin-top: 36px;
+    grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px;
+  }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+  .gallery .tall { grid-row: span 2; }
+  .gallery .wide { grid-column: span 2; }
+  .credit { margin-top: 18px; font-size: 13px; color: #e8c9cf; }
+  .credit a { color: var(--yellow); }
+
+  /* Details */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
+  .card {
+    background: #fff; border-radius: 16px; padding: 28px 24px;
+    box-shadow: 0 4px 18px rgba(109,26,44,.08); text-align: left;
+  }
+  .card h3 { color: var(--burgundy); font-size: 24px; margin-bottom: 8px; }
+  .card .tag {
+    display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .card p { margin: 0; color: var(--muted); }
+  .t-yellow { background: var(--yellow-soft); color: #7a5a00; }
+  .t-blue { background: var(--blue-soft); color: #1f5578; }
+  .t-burg { background: #f6e3e7; color: var(--burgundy); }
+
+  /* RSVP */
+  .rsvp { background: var(--yellow); text-align: center; }
+  .rsvp h2 { color: var(--burgundy-deep); }
+  .rsvp p { color: var(--burgundy-deep); max-width: 560px; margin: 0 auto; }
+  .car { width: min(320px, 80%); margin: 30px auto 0; }
+
+  footer { background: var(--burgundy-deep); color: #e8c9cf; text-align: center; padding: 40px 20px; font-size: 14px; }
+  footer .script { font-size: 40px; color: var(--yellow); display: block; margin-bottom: 4px; }
+  footer a { color: var(--blue); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s, transform .8s; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  @media (max-width: 860px) {
+    .venue-grid { grid-template-columns: 1fr; gap: 40px; }
+    .venue-photo { margin-right: 18px; }
+    .cards { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  }
+  @media (max-width: 520px) {
+    nav { gap: 16px; font-size: 12px; letter-spacing: .08em; }
+    .clock div { min-width: 0; flex: 1 1 40%; }
+    .clock b { font-size: 38px; }
+    section { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top">Home</a>
+  <a href="#venue">Venue</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#details">Details</a>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <div class="eyebrow">Save the date</div>
+    <h1>A Studebaker Wedding</h1>
+    <div class="names script">Omar &amp; Kaylene</div>
+    <div class="when">Saturday, May 15, 2027 <span>·</span> Petersburg, Pennsylvania</div>
+    <div class="btns">
+      <a class="btn btn-yellow" href="save-the-date.ics" download>Add to calendar</a>
+      <a class="btn btn-ghost" href="#venue">See the venue</a>
+    </div>
+  </div>
+</header>
+<div class="stripe"></div>
+
+<section class="countdown center">
+  <div class="wrap reveal">
+    <div class="kicker">Counting down</div>
+    <h2>Until we say “I do”</h2>
+    <div class="clock" id="clock">
+      <div><b id="d">–</b><small>Days</small></div>
+      <div><b id="h">–</b><small>Hours</small></div>
+      <div><b id="m">–</b><small>Minutes</small></div>
+      <div><b id="s">–</b><small>Seconds</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="venue">
+  <div class="wrap venue-grid">
+    <div class="venue-photo reveal"><img src="images/porch.jpg" alt="Rocking chairs on the covered porch at Studebaker House" loading="lazy"></div>
+    <div class="reveal">
+      <div class="kicker">The venue</div>
+      <h2>Studebaker House</h2>
+      <p>Tucked into the hills of Central Pennsylvania, Studebaker House is a timber-and-stone retreat with tall windows on the trees, a wood-burning fireplace, a deck over the stream, and a porch made for rocking chairs. We can't wait to celebrate with you there.</p>
+      <ul class="facts">
+        <li><span class="dot" style="background:var(--burgundy)"></span><span><b>Where</b><br>12716 Alan Seeger Road, Petersburg, PA 16669<br><a href="https://www.google.com/maps/search/?api=1&query=12716+Alan+Seeger+Road+Petersburg+PA+16669" target="_blank" rel="noopener">Open in Maps</a></span></li>
+        <li><span class="dot" style="background:var(--yellow)"></span><span><b>When</b><br>Saturday, May 15, 2027. Times to follow.</span></li>
+        <li><span class="dot" style="background:var(--blue)"></span><span><b>More about the house</b><br><a href="https://www.studebakerhouse.com/" target="_blank" rel="noopener">studebakerhouse.com</a></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-sec center" id="gallery">
+  <div class="wrap">
+    <div class="kicker reveal">A look around</div>
+    <h2 class="reveal">Hills, timber &amp; a little stream</h2>
+    <div class="gallery reveal">
+      <img class="wide tall" src="images/dining.jpg" alt="The main dining room with tall windows and a chandelier" loading="lazy">
+      <img class="tall" src="images/lane.jpg" alt="Gravel lane and fall trees under a blue sky" loading="lazy">
+      <img class="tall" src="images/cocktail.jpg" alt="A cocktail being finished with a flame" loading="lazy">
+      <img class="wide" src="images/table.jpg" alt="A long table set for dinner by the fireplace" loading="lazy">
+      <img class="wide" src="images/exterior.jpg" alt="The house's tall windows and stone patio" loading="lazy">
+    </div>
+    <p class="credit">Photos courtesy of <a href="https://www.studebakerhouse.com/" target="_blank" rel="noopener">Studebaker House</a>.</p>
+  </div>
+</section>
+
+<section id="details" class="center">
+  <div class="wrap">
+    <div class="kicker reveal">The details</div>
+    <h2 class="reveal">What to know</h2>
+    <p class="lead reveal">We're still putting the pieces together. Check back here as the day gets closer.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="tag t-burg">Ceremony</span>
+        <h3>Saying “I do”</h3>
+        <p>Ceremony time and details coming soon.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag t-yellow">Celebration</span>
+        <h3>Dinner &amp; toasts</h3>
+        <p>Good food, good people, and a lot of happy. Menu and schedule to follow.</p>
+      </div>
+      <div class="card reveal">
+        <span class="tag t-blue">Travel</span>
+        <h3>Getting there</h3>
+        <p>Studebaker House is in Petersburg, PA, in Central Pennsylvania. Travel and lodging suggestions coming soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp">
+  <div class="wrap reveal">
+    <h2>Formal invitation to follow</h2>
+    <p>Keep an eye on your mailbox. RSVP details will be on the invitation and here.</p>
+    <svg class="car" viewBox="0 0 320 120" role="img" aria-label="A vintage car with a Just Married sign">
+      <path d="M30 80 Q34 58 70 54 L104 30 Q114 22 132 22 L196 22 Q214 22 226 34 L250 56 Q290 60 296 80 L296 90 L30 90 Z" fill="#6d1a2c"/>
+      <path d="M112 34 Q118 30 130 30 L160 30 L160 54 L92 54 Z" fill="#a8d4f0"/>
+      <path d="M168 30 L194 30 Q206 30 214 38 L232 54 L168 54 Z" fill="#a8d4f0"/>
+      <rect x="22" y="80" width="280" height="10" rx="5" fill="#4a0f1d"/>
+      <circle cx="84" cy="92" r="20" fill="#2b1a1e"/><circle cx="84" cy="92" r="8" fill="#fffaf2"/>
+      <circle cx="240" cy="92" r="20" fill="#2b1a1e"/><circle cx="240" cy="92" r="8" fill="#fffaf2"/>
+      <circle cx="290" cy="70" r="5" fill="#fffaf2"/>
+      <rect x="2" y="56" width="62" height="22" rx="4" fill="#fffaf2" transform="rotate(-6 33 67)"/>
+      <text x="33" y="71" text-anchor="middle" font-family="Great Vibes, cursive" font-size="15" fill="#6d1a2c" transform="rotate(-6 33 67)">Just Married</text>
+    </svg>
+  </div>
+</section>
+
+<footer>
+  <span class="script">Omar &amp; Kaylene</span>
+  May 15, 2027 · Studebaker House · Petersburg, PA
+</footer>
+
+<script>
+  // Countdown to 2027-05-15, midnight Eastern (EDT, UTC-4).
+  const target = new Date("2027-05-15T00:00:00-04:00").getTime();
+  const pad = n => String(n).padStart(2, "0");
+  function tick() {
+    let diff = Math.max(0, target - Date.now());
+    const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+    const h = Math.floor(diff / 36e5); diff -= h * 36e5;
+    const m = Math.floor(diff / 6e4); diff -= m * 6e4;
+    const s = Math.floor(diff / 1e3);
+    document.getElementById("d").textContent = d;
+    document.getElementById("h").textContent = pad(h);
+    document.getElementById("m").textContent = pad(m);
+    document.getElementById("s").textContent = pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Solid nav once past the hero.
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("solid", window.scrollY > window.innerHeight * 0.6);
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // Fade sections in as they scroll into view.
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
